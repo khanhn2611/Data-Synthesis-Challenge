@@ -1,11 +1,6 @@
 import tweepy
 import pandas
 
-apikey='heGu37AaZokG971RwJXFoRJWX'
-apikeysecret="xjnOmS8bZejf1tZ6VCccM3aAxzlWELd5UjGyi50PWzhKiPLNQ1"
-token='2937733292-M6dmebGeWfpBrjozAFdCDGdNb4ZwVfIQ6RBgZty'
-tokensecret='LCWIfnTI8DrjElFx8ssTSCyDk8QVO5ke131wS1bxmCWVO'
-
 auth= tweepy.OAuthHandler(apikey,apikeysecret )
 auth.set_access_token(token, tokensecret)
 api = tweepy.API(auth,wait_on_rate_limit=True)
