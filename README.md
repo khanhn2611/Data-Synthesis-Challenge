@@ -1,1 +1,9 @@
 # Data-Synthesis-Challenge
+
+Despite the plethora of data analytical tools that exist today, data generation remains to be the most pivotal and challenging aspect of our analysis and comprehension of the data. A few of the challenges in data generation include the usability of the data itself, the representation of the data and the data dimensionality. 
+
+Our team has decided that Twitter provides an unprecedented stream of real-time data that can be used to tackle some of the challenges we face today. Moreover, the public free-to-use API that Twitter provided has been monumental to gather Twitter data through web scraping. We chose to tackle the biggest challenge that the American public face today in the wake of the COVID-19 pandemic which is vaccination. Vaccination has split the public opinions and remains the most contentious subject. Our goal for the project is to create a preliminary heat map of the vaccination-tweet related.
+
+Tweepy libraries on Python were used to authenticate our access to the Twitter API and restrict our search geographical domain to the United States. The keyword we were using to filter the tweets is vaccination and we gathered 3000 unfiltered tweets. Since our goal is to create a map, filtering through the geolocation left us with a usable data of 920 tweets. One meaningful interpretation of the map that we created is to give insights to the public and potentially, policy makers on the necessity to allocate more resources on highly-impacted regions. 
+
+If my team was given more than 24 hours for the project, we would also use publicly available API to gather more data from other popular social media platforms such as Instagram and Facebook to name a few in order to get a more holistic view of the data. Furthermore, we would also conduct further processing and cleaning of the data we currently have to potentially discover other hidden or subtle correlations
