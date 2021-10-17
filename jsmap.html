@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>  
+<head>
+  <title>Choropleth Map</title>
+  <div id="container"> 
+</div>
+<script src="js/proj4.js"></script>
+<script src="js/anychart-base.min.js"></script>
+<script src="js/anychart-map.min.js"></script>
+<script src="js/anychart-exports.min.js"></script>
+<script src="js/anychart-ui.min.js"></script>
+<script src="js/united_states_of_america.js"></script>
+  <style>
+    html,
+    body,
+    #container {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+    <div id="container"> 
+    </div>
+    <script src="js/proj4.js"></script>
+    <script src="js/anychart-base.min.js"></script>
+    <script src="js/anychart-map.min.js"></script>
+    <script src="js/anychart-exports.min.js"></script>
+    <script src="js/anychart-ui.min.js"></script>
+    <script src="js/united_states_of_america.js"></script>
+    
+    <script type="text/javascript">anychart.onDocumentReady(function() {
+    
+    var usmap = anychart.map();
+
+    const states = ["US.AL", "US.AK", "US.AZ", "US.AR", "US.CA", "US.CO", "US.CT", "US.DE", "US.DC", "US.FL", "US.GA", "US.HI", "US.ID", "US.IL", "US.IN", "US.IA", "US.KS", "US.KY", "US.LA", "US.ME", "US.MD", "US.MA", "US.MI", "US.MN", "US.MS", "US.MO", "US.MT", "US.NE", "US.NV", "US.NH", "US.NJ", "US.NM", "US.NY", "US.NC", "US.ND", "US.OH", "US.OK", "US.OR", "US.PA", "US.RI", "US.SC", "US.SD", "US.TN", "US.TX", "US.UT", "US.VT", "US.VA", "US.WA", "US.WV", "US.WI", "US.WY"]
+
+    var foo = [11,4,6,6,93,16,10,1,35,40,18,3,6,23,14,5,13,5,15,4,17,23,14,12,8,9,1,6,13,3,21,1,96,21,3,28,8,10,19,10,5,1,17,61,6,2,23,56,6,5,2];
+
+    var dataSet = [];
+    for (var i = 0; i < 51; i++) {
+        dataSet.push({id:states[i], value:foo[i]})
+    }
+    usmap.title("COVID-19 Intensity")   
+
+    series = usmap.choropleth(dataSet);
+  
+    series.geoIdField('id');
+
+    series.colorScale(anychart.scales.linearColor('#715c80', '#4b0380'));
+    series.hovered().fill('#354e66');
+
+    usmap.geoData(anychart.maps['united_states_of_america']);
+  
+    usmap.container('container');
+  
+    usmap.draw();
+  });</script>
+</body>
+
+</html>
